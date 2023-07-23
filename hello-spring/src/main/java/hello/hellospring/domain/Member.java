@@ -1,7 +1,15 @@
 package hello.hellospring.domain;
 
+import javax.persistence.*;
+
+@Entity
 public class Member {
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    // 만약 DB컬럼 이름이 username이라면 매핑을 해준다.
+//    @Column(name = "username")
     private String name;
 
     public String getName() {
